@@ -10,7 +10,7 @@ using WeatherGuru;
 
 namespace WeatherGuru.Droid
 {
-	[Activity (Label = "WeatherGuru", MainLauncher = true, Icon = "@drawable/icon")]
+	[Activity (Label = "WeatherGuru", MainLauncher = true, Icon = "@drawable/icon_guru")]
 	public class MainActivity : Activity
 	{
 
@@ -22,6 +22,7 @@ namespace WeatherGuru.Droid
             //Button button = FindViewById<Button>(Resource.Id.weatherBtn);
             Button button = (Button)FindViewById(Resource.Id.weatherBtn);
             button.Click += Button_Click;
+            
             //button.Click += (object sender, EventArgs e) =>
             //{
              //   Button_Click(sender, e);
@@ -43,6 +44,13 @@ namespace WeatherGuru.Droid
                 FindViewById<TextView>(Resource.Id.sunriseText).Text = weather.Sunrise;
                 FindViewById<TextView>(Resource.Id.sunsetText).Text = weather.Sunset;
 
+                FindViewById<TextView>(Resource.Id.locationLabel).Visibility = ViewStates.Visible;
+                FindViewById<TextView>(Resource.Id.tempLabel).Visibility = ViewStates.Visible;
+                FindViewById<TextView>(Resource.Id.windLabel).Visibility = ViewStates.Visible;
+                FindViewById<TextView>(Resource.Id.humidtyLabel).Visibility = ViewStates.Visible;
+                FindViewById<TextView>(Resource.Id.visibilityLabel).Visibility = ViewStates.Visible;
+                FindViewById<TextView>(Resource.Id.sunriseLabel).Visibility = ViewStates.Visible;
+                FindViewById<TextView>(Resource.Id.sunsetLabel).Visibility = ViewStates.Visible;
             }
         }
 
